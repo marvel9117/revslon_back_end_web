@@ -1,11 +1,14 @@
 // A simple calculator using basic concepts: variables, data types, and operators.
 
+// Import prompt-sync module - installed using (npm install prompt-sync)
+const prompt = require('prompt-sync')();
+
 console.log("Welcome to the Simple Calculator!");
 
 
-let num1 = 10;
-let num2 = 5;
-let operation = "+";
+let num1 = parseFloat(prompt("Enter first number: "));
+let num2 = parseFloat(prompt("Enter second number: "));
+let operation = prompt("Enter operation (+, -, *, /): ");
 
 let result;
 
