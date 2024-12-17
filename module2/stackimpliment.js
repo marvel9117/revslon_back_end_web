@@ -32,3 +32,29 @@ class Stack {
     }
 }
 
+
+//Reversing a string using stack
+function reverseString(input) {
+    const stack = new Stack();
+    let reversed = "";
+
+    // Push each character onto the stack
+    for (let char of input) {
+        stack.push(char);
+    }
+
+    // Pop characters to form the reversed string
+    while (!stack.isEmpty()) {
+        reversed += stack.pop();
+    }
+
+    return reversed;
+}
+
+
+//This is my  Example Usage
+const originalString = "Marvel";
+const reversedString = reverseString(originalString);
+
+console.log("Original String:", originalString); 
+console.log("Reversed String:", reversedString); 
