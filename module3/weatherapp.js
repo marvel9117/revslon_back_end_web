@@ -5,14 +5,15 @@
 //  .on(e, l) method: register callback  for an event (data, end, error)
 //   listener - function that will be called when an event is trigered
 
-const http = require('http');
 
-// Weather API URL for a specific city (london)
+const https = require('https'); // Use https module
+
+// Weather API URL for a specific city (London)
 const city = 'London';
-const url = `http://wttr.in/${city}?format=%C+%t`;
+const url = `https://wttr.in/${city}?format=%C+%t`;
 
-// Make an HTTP GET request
-http.get(url, (res) => {
+// Make an HTTPS GET request
+https.get(url, (res) => {
     let data = '';
 
     // Collect data chunks
@@ -28,5 +29,4 @@ http.get(url, (res) => {
 }).on('error', (err) => {
     console.error('Error:', err.message);
 });
-
 
